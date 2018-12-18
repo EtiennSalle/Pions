@@ -9,6 +9,8 @@ public class Main {
 		int size = entree.nextInt();
 		
 		
+		
+		
 		Modal dam = new Modal(dim,size); // Création de la matrice suivant les choix initiaux.
 		
 		

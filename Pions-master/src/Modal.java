@@ -27,10 +27,10 @@ public class Modal implements Gestion{
 	public boolean isValable(int i, int j,int k) {
 		
 		if(Tab[i][j][k]>0) {
-			return true;
+			return false;
 		}
 		else {
-			return false; 
+			return true; 
 		}
 		
 	
@@ -38,23 +38,30 @@ public class Modal implements Gestion{
 
 	//Permet de mettre l'id du joueur sur la case qu'il a selectionnée
 	public void placePion(int id, int x, int y, int z) {	
-		Tab[x][y][z]=id;
-	}
-	
-	public void afficheTab(int [][] tab ) {
-		int longueur = tab.length;
 		
-		for (int x = 0; x < longueur; x++) {
-			for ( int y = 0; y < longueur; y++) {
-			System.out.println(tab[x][y]);
-			}
-			System.out.println("\n");
+		if(isValable(x,y,z)) {
+		Tab[x][y][z]=id;
+		}else {
+		System.out.println("Cette case est déjà prise");
 		}
 	}
 	
-	public int backupTab(int [][] tab ) {
-		int [][] oldtab = tab.clone();
-		return oldtab;
+	public void afficheTab(int row , int column) {
+		String cases="";	
+		for (int x = 0; x < row; x++) {
+			for ( int y = 0; y < column; y++) {
+				cases=cases+" "+this.Tab[x][y];
+			}
+			System.out.println(cases);
+			System.out.println("\n");
+			cases="";
+			
+		}
+	}
+	
+	public int[][] backupTab(int [][] tab ) {
+		int[][] oldtab = tab.clone();
+		return  oldtab;
 	}
 	
 	
