@@ -1,7 +1,7 @@
 
 public interface Gestion {
 	
-	public double calculNorme();
+	public int calculNorme(int x1, int x2);
 	
 	public boolean isColinear();
 	
@@ -12,7 +12,7 @@ public interface Gestion {
 	public boolean isValable(int i, int j,int k);
 	
 	
-	
+	public boolean nextTo(int x1 , int y1 , int z1 , int x2, int y2 , int z2);
 	
 	
 

@@ -68,15 +68,31 @@ public class Modal implements Gestion{
 
 
 	@Override
-	public double calculNorme() {
+	public int calculNorme(int x1, int x2) {
 		// TODO Auto-generated method stub
-		return 0;
+		
+		return Math.abs(x1-x2);
 	}
 
 
 	@Override
 	public boolean isColinear() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generatedmethod stub
+		
 		return false;
+	}
+
+
+
+
+	@Override
+	public boolean nextTo(int x1, int y1, int z1, int x2, int y2, int z2) {
+		// TODO Stub de la méthode généré automatiquement
+		if((calculNorme(x1,x2)<2)&&(calculNorme(y1,y2)<2)&&(calculNorme(z1,z2)<2)) {
+		return true;
+		
+		}else {
+			return false;
+		}
 	}
 }
