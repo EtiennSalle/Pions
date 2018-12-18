@@ -4,15 +4,15 @@ public class Modal implements Gestion{
 	int[][][] Tab;
 	
 	
-	public Modal(int dim,int taille) {
+	public Modal(int dim,int size) {
 		
 		if(dim==2) {
 			
-			this.Tab= new int[taille][taille][1];
+			this.Tab= new int[size][size][1];
 		}
 		else if(dim==3){
 			
-			this.Tab= new int[taille][taille][taille];
+			this.Tab= new int[size][size][size];
 			
 		}
 		else {
@@ -50,7 +50,7 @@ public class Modal implements Gestion{
 		String cases="";	
 		for (int x = 0; x < row; x++) {
 			for ( int y = 0; y < column; y++) {
-				cases=cases+" "+this.Tab[x][y];
+				cases=cases+" "+Integer.valueOf(Tab[x][y][0]);
 			}
 			System.out.println(cases);
 			System.out.println("\n");
